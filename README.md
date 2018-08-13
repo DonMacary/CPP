@@ -4,7 +4,7 @@
 * [Chapter 1 - Intro](./ch01_Introduction)
     * [Demo Labs](./ch01_Introduction/Demo_Labs)
     * [Performance Labs](./ch01_Introduction/Performance_Labs)
-        *[Performance Lab 1 - GCD and phi](./ch01_Introduction/Performance_Labs/lab1A.cpp)
+        * [Performance Lab 1 - GCD and phi](./ch01_Introduction/Performance_Labs/lab1A.cpp)
 * [Chapter 2 - C++ Standard Template Library](./ch02_Cpp_STL)
     * [Demo Labs](./ch02_Cpp_STL/Demo_Labs)
         * [Deque](./ch02_Cpp_STL/Demo_Labs/deque.cpp)
