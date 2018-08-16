@@ -31,6 +31,10 @@ int main() {
 	stoopid.display_stats();
 	killer.display_stats();
 	dummy.display_stats();
+
+	stoopid.setHP(0);
+	killer.setHP(0);
+	dummy.setHP(0);
 	// Now we can do our main logic
 	// This is where our game gets programmed
 	// Have fun here 
