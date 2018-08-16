@@ -50,16 +50,19 @@ int main() {
 		case 1:
 			whoseMove = 0;
 			stoopid.setHP(2000);
+			std::cout << std::endl << "Player 1 you are now Stoopid!" << std::endl;
 			validChoice = 1;
 			break;
 		case 2:
 			whoseMove = 1;
+			std::cout << std::endl << "Player 1 you are now Killer!" << std::endl;
 			killer.setHP(1500);
 			validChoice = 1;
 			break;
 		case 3:
 			whoseMove = 2;
 			dummy.setHP(2000);
+			std::cout << std::endl << "Player 1 you are now Dummy!" << std::endl;
 			validChoice = 1;
 			break;
 		default:
@@ -70,17 +73,19 @@ int main() {
 	validChoice = 0;
 	while (validChoice == 0)
 	{
-		std::cout << "Player 2, choose your mech!";
+		std::cout << std::endl << "Player 2, choose your mech!";
 		choice = get_int_input();
 		switch (choice)
 		{
 		case 1:
 			if (stoopid.getHP() > 0)
 			{
-				std::cout << "You cannot pick the same mech as player 1 try again" << std::endl;
+				std::cout << "You cannot pick the same mech as player 1 try again" << std::endl << std::endl;
 				break;
 			}
 			stoopid.setHP(2000);
+			std::cout << std::endl;
+			std::cout  << "Player 2 you are now Stoopid!" << std::endl << std::endl;
 			validChoice = 1;
 			break;
 		case 2:
@@ -90,15 +95,17 @@ int main() {
 				break;
 			}
 			killer.setHP(1500);
+			std::cout << std::endl << "Player 2 you are now Killer!" << std::endl << std::endl;
 			validChoice = 1;
 			break;
 		case 3:
 			if (killer.getHP() > 0)
 			{
-				std::cout << "You cannot pick the same mech as player 1 try again" << std::endl;
+				std::cout << "You cannot pick the same mech as player 1 try again" << std::endl << std::endl;
 				break;
 			}
 			dummy.setHP(2000);
+			std::cout << std::endl << "Player 2 you are now Dummy!" << std::endl << std::endl;
 			validChoice = 1;
 			break;
 		default:
@@ -165,12 +172,12 @@ int main() {
 					std::cout << "Stoopid has fired " << ionCannon.getName() << " at ";
 					if (killer.getHP() > 0)
 					{
-						std::cout << "Killer, dealing " << ionCannon.getDamage() << " damage!" << std::endl;
+						std::cout << "Killer, dealing " << ionCannon.getDamage() << " damage!" << std::endl << std::endl;
 						killer.setHP(killer.getHP() - ionCannon.getDamage());
 					}
 					else
 					{
-						std::cout << "Dummy, dealing " << ionCannon.getDamage() << " damage!" << std::endl;
+						std::cout << "Dummy, dealing " << ionCannon.getDamage() << " damage!" << std::endl << std::endl;
 						dummy.setHP(dummy.getHP() - ionCannon.getDamage());
 					}
 					//reduce the power that the mech has
@@ -178,10 +185,10 @@ int main() {
 					std::cout << "Remaining power: " << stoopid.getPower() << std::endl;
 					break;
 				case 2:
-					std::cout << "Charging until next turn!" << std::endl;
+					std::cout << "Charging until next turn!" << std::endl << std::endl;
 					break;
 				case 3:
-					std::cout << "STOOPID HAS SELF-DESTRUCTED!" << std::endl;
+					std::cout << "STOOPID HAS SELF-DESTRUCTED!" << std::endl << std::endl;
 					stoopid.setHP(0);
 					break;
 				default:
@@ -227,12 +234,12 @@ int main() {
 					std::cout << "Killer has fired his left " << machineGun.getName() << " at ";
 					if (stoopid.getHP() > 0)
 					{
-						std::cout << "Stoopid, dealing " << machineGun.getDamage() << " damage!" << std::endl;
+						std::cout << "Stoopid, dealing " << machineGun.getDamage() << " damage!" << std::endl << std::endl;
 						stoopid.setHP(stoopid.getHP() - machineGun.getDamage());
 					}
 					else
 					{
-						std::cout << "Dummy, dealing " << machineGun.getDamage() << " damage!" << std::endl;
+						std::cout << "Dummy, dealing " << machineGun.getDamage() << " damage!" << std::endl << std::endl;
 						dummy.setHP(dummy.getHP() - machineGun.getDamage());
 					}
 					//reduce the power that the mech has
@@ -244,23 +251,23 @@ int main() {
 					std::cout << "Killer has fired his right " << machineGun.getName() << " at ";
 					if (stoopid.getHP() > 0)
 					{
-						std::cout << "Stoopid, dealing " << machineGun.getDamage() << " damage!" << std::endl;
+						std::cout << "Stoopid, dealing " << machineGun.getDamage() << " damage!" << std::endl << std::endl;
 						stoopid.setHP(stoopid.getHP() - machineGun.getDamage());
 					}
 					else
 					{
-						std::cout << "Dummy, dealing " << machineGun.getDamage() << " damage!" << std::endl;
+						std::cout << "Dummy, dealing " << machineGun.getDamage() << " damage!" << std::endl << std::endl;
 						dummy.setHP(dummy.getHP() - machineGun.getDamage());
 					}
 					//reduce the power that the mech has
 					killer.reducePower(machineGun.getCost());
-					std::cout << "Remaining power: " << killer.getPower() << std::endl;
+					std::cout << "Remaining power: " << killer.getPower() << std::endl << std::endl;
 					break;
 				case 2:
-					std::cout << "Charging until next turn!" << std::endl;
+					std::cout << "Charging until next turn!" << std::endl << std::endl;
 					break;
 				case 3:
-					std::cout << "KILLER HAS SELF-DESTRUCTED!" << std::endl;
+					std::cout << "KILLER HAS SELF-DESTRUCTED!" << std::endl << std::endl;
 					killer.setHP(0);
 					break;
 				default:
@@ -306,23 +313,23 @@ int main() {
 					std::cout << "Dummy has fired his " << rockets.getName() << " at ";
 					if (stoopid.getHP() > 0)
 					{
-						std::cout << "Stoopid, dealing " << rockets.getDamage() << " damage!" << std::endl;
+						std::cout << "Stoopid, dealing " << rockets.getDamage() << " damage!" << std::endl << std::endl;
 						stoopid.setHP(stoopid.getHP() - rockets.getDamage());
 					}
 					else
 					{
-						std::cout << "Killer, dealing " << rockets.getDamage() << " damage!" << std::endl;
+						std::cout << "Killer, dealing " << rockets.getDamage() << " damage!" << std::endl << std::endl;
 						killer.setHP(killer.getHP() - rockets.getDamage());
 					}
 					//reduce the power that the mech has
 					dummy.reducePower(rockets.getCost());
-					std::cout << "Remaining power: " << dummy.getPower() << std::endl;
+					std::cout << "Remaining power: " << dummy.getPower() << std::endl << std::endl;
 					break;
 				case 2:
-					std::cout << "Charging until next turn!" << std::endl;
+					std::cout << "Charging until next turn!" << std::endl << std::endl;
 					break;
 				case 3:
-					std::cout << "DUMMY HAS SELF DESTRUCTED!" << std::endl;
+					std::cout << "DUMMY HAS SELF DESTRUCTED!" << std::endl << std::endl;
 					dummy.setHP(0);
 					break;
 				default:
